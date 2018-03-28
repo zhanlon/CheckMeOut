@@ -1,5 +1,6 @@
 #include "order.h"
 
+
 order::order() {
   tax = 0.0725;
   closed = false;
@@ -14,6 +15,7 @@ void order::addItem(item i) {
   if( !closed )
   {
     itemList.push_back(i);
+    notifyObservers();
   }
 }
 
